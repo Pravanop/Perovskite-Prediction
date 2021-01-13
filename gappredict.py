@@ -7,8 +7,8 @@ Original file is located at
     https://colab.research.google.com/drive/1wmnpNX2wrJkyyb4TcbVgXQeOXBqmEd6x
 """
 
-! pip install megnet
-! pip install pymatgen
+# ! pip install megnet
+# ! pip install pymatgen
 
 import numpy as np
 from megnet.models import MEGNetModel
@@ -17,18 +17,19 @@ from pymatgen import Lattice
 from pymatgen import Structure
 model = MEGNetModel.from_file('/content/drive/MyDrive/Perovskites prediction/Phase 3 - Transfer Learning/BandgapPredictor.hdf5')
 
-class GapPredict(model,lattice,species_list,system):
+class GapPredict(model,lattice,species_list,system,positions_list):
   def _init_(self):
     self.model = model
     self.lattice = lattice
     self.species_list = species_list
     self.system = system
+    self.positions_list = positions_list
   
   def structure_generator(self):
-    if(self.system = 'cubic'):
-      structure = Structure(self.lattice,self.species_list,[(0,0,0),(0.5,0.5,0.5),(0.5, 0.5, 0), (0.5, 0, 0.5), (0, 0.5, 0.5)],coords_are_cartesian= False)
-    if(self.system = 'orthorhombic'):
-      structure = Structure(self.lattice,self.species_list,[(0,0,0),(0.5,0.5,0.5),(0.5, 0.5, 0), (0.5, 0, 0.5), (0, 0.5, 0.5)],coords_are_cartesian= False)
+    if(self.system == 'cubic'):
+      structure = Structure(self.lattice,self.species_list,self.positions_list,coords_are_cartesian= False)
+    if(self.system == 'orthorhombic'):
+      structure = Structure(self.lattice,self.species_list,self.positions_list,coords_are_cartesian= False)
     else:
       structure = 0
     return structure
