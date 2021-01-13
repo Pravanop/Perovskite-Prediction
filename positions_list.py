@@ -25,7 +25,7 @@ class positions_species_list():
 
     else:
       if (self.tolerance == 'cubic'):
-        species_list = [self.input_dict['A'][0],self.input_dict['A1'][0],self.input_dict['B'][0],self.input_dict['B1'][0]] + [self.input_dict['C'][0] for in range(3)] + [self.input_dict['C1'][0] for in range(3)]
+        species_list = [self.input_dict['A'][0],self.input_dict['A1'][0],self.input_dict['B'][0],self.input_dict['B1'][0]] + [self.input_dict['C'][0] for i in range(3)] + [self.input_dict['C1'][0] for i in range(3)]
         positions = [(0.25,0.25,0.25),(0.75,0.75,0.75),(0,0,0,),(0.5,0.5,0.5),(0.25,0.25,0.75),(0.25,0.75,0.75),(0.25,0.5,0.25),(0.75,0.25,0.25),(0.75,0.25,0.75),(0.75,0.75,0.25)]
 
       if (self.tolerance == 'orthorhombic'):
