@@ -1,7 +1,7 @@
-# -*- coding: utf-8 -*-
-class Goldschmidt():
-  def _init_(inputs_dict):
-    self.inputs_dict = inputs_dict
+
+class tolerance_compute():
+  def __init__(self,input_dict = {}):
+    self.input_dict = input_dict
   
   def tolerance_compute(self):
     A_radius = self.inputs_dict['A'][1]
@@ -9,11 +9,10 @@ class Goldschmidt():
     B_radius = self.inputs_dict['B'][1]
     B1_radius = self.inputs_dict['B1'][1]
     C_radius = self.inputs_dict['C'][1]
-    C1_radius = self.inputs_dict['C1'][1]
 
     Aavg_radius = A_radius + A1_radius
     Bavg_radius = B_radius + B1_radius
-    Cavg_radius = C_radius + C1_radius
+    Cavg_radius = 2*C_radius 
     t = (Aavg_radius/2) + (Cavg_radius/2)
     t = t/ ((Bavg_radius/2) + (Cavg_radius/2))
     t = t/1.414
