@@ -1,8 +1,8 @@
 #This class is responsible for calculating the Goldschmidt tolerance factor and determining the crystal structure using the input ionic radii for elements at each site.
 # Tolerance factor (t)                Structure
-#       >1                      Hexagonal/Tetragonal
-#      0.9-1                    Cubic
-#     0.71-0.9                  Orthorhombic/Rhombohedral
+#      >1.017                   Hexagonal/Tetragonal
+#    0.813-1.017                Cubic
+#    0.71-0.813                 Orthorhombic/Rhombohedral
 #      <0.71                    Different structures
 
 class tolerance_compute():
