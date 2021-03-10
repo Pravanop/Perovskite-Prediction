@@ -1,6 +1,10 @@
 # Graph Representational Learning for bandgap prediction in varied perovskite crystals
 Predicting new perovskites with Graph Neural Networks. <br>
 
+
+<img src = "Graphical%20Abstract.PNG" width = "600" height = "450"  >
+
+
 ## ReadMe to be updated. Work in progress.
 <p align="justify">
 Perovskites are a promising class of materials increasingly attracting the attention of material scientists world over for their applications in optoelectronic devices, solar cells in particular. This interest can be attributed to their ease of fabrication and their tuneable bandgaps - both handy properties for using them commercially as solar cells. In this project, the computational efficiency of Graph Neural Networks (GNNs) has been leveraged to help accelerate the discovery of new perovskite compounds (ABX3) with favourable properties. The GNN used in the model helps predict with a high degree of accuracy the bandgap of perovskites in a few milliseconds and given its high generalisability, it can do the same for any type of perovskite.  
