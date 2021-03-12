@@ -1,4 +1,4 @@
-
+#This class is responsible for predicting the bandgap of the perovskite input by the user using a pre-trained MEGNet Graph Neural Network
 
 import numpy as np
 from megnet.models import MEGNetModel
@@ -14,7 +14,7 @@ class GapPredict():
     self.system = system
     self.positions_list = positions_list
   
-  def structure_generator(self):
+  def structure_generator(self): #generates a pymatgen structure based on the crystal system, lattice parameters, component ions and positions of ions
     if(self.system == 'cubic'):
       structure = Structure(self.lattice,self.species_list,self.positions_list,coords_are_cartesian= False)
     if(self.system == 'orthorhombic'):
@@ -23,7 +23,7 @@ class GapPredict():
       structure = 0
     return structure
   
-  def gapPredictor(self):
+  def gapPredictor(self):        #predicts the bandgap for a given perovskite using a pymatgen structure and a pre-trained MEGNet model
     structure = self.structure_generator()
     try:
       bandgap = model.predict_structure(structure)
