@@ -12,6 +12,8 @@ Original file is located at
 # !apt install ase
 # !apt install gpaw
 
+#This class is responsible for finding cell parameters for the given crystal strucuture using DFT by employing a GPAW calculator supported by the ASE environment
+
 import numpy as np
 from ase.build import bulk
 from gpaw import GPAW, PW
