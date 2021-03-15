@@ -32,8 +32,8 @@ class latticeGenerator():
     for a in lattice_constants:                                 #loop for calculating energy of structures with edge length varying from 2 to 10
       material = crystal(self.species_list,self.positions,cellpar = [a,a,a,90,90,90]) 
       material.set_calculator(GPAW(xc='PBE', 
-                                  kpts=(6,6,6), # k-point mesh set to 6*6*6
-                                  mode=PW(), 
+                                  kpts=(8,8,8), # k-point mesh set to 8*8*8
+                                  mode=PW(500), 
                                   txt='gpaw.txt'))
       energies.append(material.get_potential_energy())          # list containing energies of all cubic structures
     return lattice_constants[energies.index(min(energies))]     #returns edge length for which minimum energy was obtained
@@ -47,7 +47,7 @@ class latticeGenerator():
         material = crystal(self.species_list,self.positions,cellpar = [a,a,c,90,90,90])
         material.set_calculator(GPAW(xc='PBE', 
                                     kpts=(6,6,6), # k-point mesh set to 6*6*6
-                                    mode=PW(), 
+                                    mode=PW(500), 
                                     txt='gpaw_a.txt'))
         energies.append(material.get_potential_energy())        # list containing energies of all orthorhombic structures
     a_final = lattice_constants_a[energies.index(min(energies))]
